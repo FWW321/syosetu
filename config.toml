@@ -1,0 +1,10 @@
+base_url = "https://syosetu.com"
+
+data_dir = "output"
+
+[cookie]
+ses = ""
+userl = ""
+
+[novel]
+searchable = "no"
