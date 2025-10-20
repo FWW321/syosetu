@@ -26,15 +26,15 @@ impl Chapter {
     pub async fn read(chapter_path: &Path) -> Result<Self> {
         println!("加载章节: {}", chapter_path.display());
         let file = File::open(chapter_path).await?;
-        let reader = BufReader::new(file);
+        let mut reader = BufReader::new(file);
 
         let mut title = String::new();
-        let mut content = String::new();
+        let mut content = String::with_capacity(800);
         let mut found_title = false;
 
-        let mut lines = reader.lines();
+        let mut line = String::new();
 
-        while let Some(line) = lines.next_line().await? {
+        while reader.read_line(&mut line).await? != 0 {
             if !found_title {
                 if !line.trim().is_empty() {
                     title = line.trim().to_string();
@@ -44,6 +44,7 @@ impl Chapter {
                 content.push_str(&line);
                 content.push('\n');
             }
+            line.clear();
         }
 
         // 确保至少有一个标题
