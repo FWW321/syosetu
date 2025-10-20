@@ -1,20 +1,37 @@
 [package]
 name = "syosetu"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 
 [dependencies]
-# tracing ={ version = "0.1", features = ["async-await"] }
-# tracing-subscriber = { version = "0.3", features = ["chrono", "env-filter"] }
-reqwest = { version = "0.12", features = ["json", "cookies"] }
-tokio = { version = "1", features = ["rt-multi-thread", "macros", "fs"] }
 anyhow = "1.0"
 regex = "1"
 scraper = "0.24"
-chrono = { version = "0.4", features = ["serde"] }
 config = "0.15"
 lazy_static = "1.4"
-serde = { version = "1.0", features = ["derive"] }
+
+[dependencies.reqwest]
+version = "0.12"
+features = [
+    "json",
+    "cookies",
+]
+
+[dependencies.tokio]
+version = "1"
+features = [
+    "rt-multi-thread",
+    "macros",
+    "fs",
+]
+
+[dependencies.chrono]
+version = "0.4"
+features = ["serde"]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
 
 [profile.release]
 opt-level = 3
