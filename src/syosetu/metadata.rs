@@ -126,7 +126,7 @@ impl Metadata {
         // - 101：异世界
         form_data.insert("genre", "101");
         // 简介
-        form_data.insert("ex", self.description.as_deref().unwrap_or(""));
+        form_data.insert("ex", self.description.as_deref().unwrap_or("这是简介, 并且有14个字符"));
         // 作品中包含的元素
         // 参考描写
         // form_data.insert("iszankoku", "1");
