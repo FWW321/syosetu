@@ -22,6 +22,7 @@ pub struct Metadata {
     pub author: Option<String>,
     pub language: Option<String>,
     pub description: Option<String>,
+    #[serde(default)]
     pub subject: Vec<String>,
 }
 
