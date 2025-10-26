@@ -3,8 +3,8 @@ base_url = "https://syosetu.com"
 data_dir = "output"
 
 [cookie]
-ses = "2rrn1h3ursvscrvrngnuf7o7br"
-userl = "2974317%3C%3Eadb451e5412f18a5c2a7b10c82db5c7acc49f66592c4857120a2693562a5883a%3C%3E1760770828"
+ses = ""
+userl = ""
 
 [novel]
 searchable = "no"
